@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DCD 300 Craft Generator Template</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Describe the work here.">
+	<meta name="keywords" content="Enter a comma separated list of keywords for search engines to find your work.">
+	<meta name="author" content="Your name">
+<!--
+Leonardo Flores' Generative Template
+
+Copyright 2023 Leonardo Flores
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<!-- 
+Enter your own credits or author's statement here.
+-->
+<!-- link to Sono font for cross stitch x -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap" rel="stylesheet">
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100vh;
+        font-family: Sono, sans-serif; /* Font of generator title */
+        margin: 0;
+        padding: 0;
+        background-color: white; /* Change to preferred color. */
+    }
+    
+    #title-container {
+        width: 100%;
+        text-align: center; 
+		color: pink; /* Changes just the title color */
+        max-height: 300px;
+		font-size: 4em; /* Change to preferred size. */
+    }
+    
+    @media (max-width: 600px) {
+        #title-container {
+            max-height: 200px;
+        }
+        
+        #text-container {
+            width: 100%;
+        }
+    }
+     /* Modify this code to shape the text size, color and alignment, text container border, and background color. */   
+    #text-container {
+        text-align: left;
+        font-size: 2em; 
+		color: white;
+        stroke: black; /* adds stroke to the x marks in svg */
+        margin: auto; 
+        border: 0px solid black; /* Change 0px to your desired border thickness, if desired. You can also change the color. */
+        padding: 10px;
+        max-width: 90%; /* The text container will adapt to the line length up to 90% of window's width */
+		background-color: transparent;
+    }
+
+    /* CSS for buttons and modal */
+    #button-container {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 100%;
+    }
+    
+    .button {
+        margin: 10px;
+        font-size: 2em;
+    }
+	
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+        font-size: 2.5em;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    svg{
+        border-style: solid;
+        border-color: black;
+        border-width: 2px;
+        font-family: Sono, sans-serif; /* font for the X marks */
+        font-size: 80px;
+    }
+</style>
+    </head>
+    <body>
+<!-- Replace the word "Title" below with the title for your work. -->
+		<div id="title-container">Kasey's Cross-Stitch Generator</div> 
+        <div id="text-container"></div>
+        <div id="button-container">
+            <button class="button" onclick="displayAbout()">About</button>
+            <button class="button" onclick="displayString()">Regenerate</button>
+        </div>
+        <div id="myModal" class="modal">
+<!-- Replace the statement below with your own artistic statement. The <p></p> tags mark the beginning and end of a paragraph. -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>This generator is created by Kasey Lee for her Fall 2024 Craft & Code Class. It is based off of Dr. Leonardo Flores' generative texts template that was altered by Dr. Sarah Laiola to get students started with generated instructions for embroidery. It was further edited by Kasey to generate cross-stitch patterns.</p> 
+            </div>
+        </div>
+<!-- The script below is your primary writing space, where you get to design the sentence templates, variables, and datasets. The sentence templates are in "origin" and you can modify them as you see fit, following the following logics derived from Tracery: variables are held between hastags (#) in the dataset, and they are defined below between quotation marks. Items in the dataset are inside quotation marks and separated by commas. You can rename any and all variables and add as many as you like, but keep the top one as "origin". All the datasets can be modified. Be sure to define the datasets for all variables. If you wish to add line breaks, insert the code <br> within the sentence template, you need to do it later in the script.-->
+
+<!-- Here is the SVG reference info that is cut from the origin below (it goes between svg and width: xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"  -->
+		<script>
+    var obj = 
+    
+
+{
+    "origin": [
+  //  "<svg width=\"500\" height=\"500\"><circle cx=\"#cx#\" cy=\"#cy#\" r=\"#r#\" style=\"fill:#color#;stroke:purple;stroke-width:2\" /><rect x=\"10\" y=\"10\" width=\"200\" height=\"100\" stroke=\"red\" stroke-width=\"6\" fill=\"blue\" />", 
+
+    "<svg width=\"500\" height=\"500\"><line x1=\"50\" y1=\"0\" x2=\"50\" y2=\"500\" style=\"stroke:black;stroke-width:2\" /><line x1=\"100\" y1=\"0\" x2=\"100\" y2=\"500\" style=\"stroke:black;stroke-width:2\" /><line x1=\"150\" y1=\"0\" x2=\"150\" y2=\"500\" style=\"stroke:black;stroke-width:2\" /><line x1=\"200\" y1=\"0\" x2=\"200\" y2=\"500\" style=\"stroke:black;stroke-width:2\" /><line x1=\"250\" y1=\"0\" x2=\"250\" y2=\"500\" style=\"stroke:black;stroke-width:2\" /><line x1=\"300\" y1=\"0\" x2=\"300\" y2=\"500\" style=\"stroke:black;stroke-width:2\" /><line x1=\"350\" y1=\"0\" x2=\"350\" y2=\"500\" style=\"stroke:black;stroke-width:2\" /><line x1=\"400\" y1=\"0\" x2=\"400\" y2=\"500\" style=\"stroke:black;stroke-width:2\" /><line x1=\"450\" y1=\"0\" x2=\"450\" y2=\"500\" style=\"stroke:black;stroke-width:2\" /><line x1=\"0\" y1=\"50\" x2=\"500\" y2=\"50\" style=\"stroke:black;stroke-width:2\" /><line x1=\"0\" y1=\"100\" x2=\"500\" y2=\"100\" style=\"stroke:black;stroke-width:2\" /><line x1=\"0\" y1=\"150\" x2=\"500\" y2=\"150\" style=\"stroke:black;stroke-width:2\" /><line x1=\"0\" y1=\"200\" x2=\"500\" y2=\"200\" style=\"stroke:black;stroke-width:2\" /><line x1=\"0\" y1=\"250\" x2=\"500\" y2=\"250\" style=\"stroke:black;stroke-width:2\" /><line x1=\"0\" y1=\"300\" x2=\"500\" y2=\"300\" style=\"stroke:black;stroke-width:2\" /><line x1=\"0\" y1=\"350\" x2=\"500\" y2=\"350\" style=\"stroke:black;stroke-width:2\" /><line x1=\"0\" y1=\"400\" x2=\"500\" y2=\"400\" style=\"stroke:black;stroke-width:2\" /><line x1=\"0\" y1=\"450\" x2=\"500\" y2=\"450\" style=\"stroke:black;stroke-width:2\" />#x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# #x# </svg>" ],
+
+// variables for X's in each square in the grid.
+
+    "x":["<svg width=\"500\" height=\"500\"><text x=\"-10\" y=\"50\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"40\" y=\"50\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"90\" y=\"50\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"140\" y=\"50\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"190\" y=\"50\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"240\" y=\"50\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"290\" y=\"50\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"340\" y=\"50\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"390\" y=\"50\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"440\" y=\"50\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"490\" y=\"50\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+
+        "<svg width=\"500\" height=\"500\"><text x=\"-10\" y=\"100\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"40\" y=\"100\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"90\" y=\"100\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"140\" y=\"100\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"190\" y=\"100\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"240\" y=\"100\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"290\" y=\"100\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"340\" y=\"100\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"390\" y=\"100\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"440\" y=\"100\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"490\" y=\"100\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+
+        "<svg width=\"500\" height=\"500\"><text x=\"-10\" y=\"150\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"40\" y=\"150\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"90\" y=\"150\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"140\" y=\"150\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"190\" y=\"150\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"240\" y=\"150\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"290\" y=\"150\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"340\" y=\"150\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"390\" y=\"150\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"440\" y=\"150\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"490\" y=\"150\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+
+        "<svg width=\"500\" height=\"500\"><text x=\"-10\" y=\"200\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"40\" y=\"200\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"90\" y=\"200\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"140\" y=\"200\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"190\" y=\"200\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"240\" y=\"200\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"290\" y=\"200\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"340\" y=\"200\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"390\" y=\"200\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"440\" y=\"200\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"490\" y=\"200\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+
+        "<svg width=\"500\" height=\"500\"><text x=\"-10\" y=\"250\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"40\" y=\"250\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"90\" y=\"250\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"140\" y=\"250\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"190\" y=\"250\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"240\" y=\"250\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"290\" y=\"250\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"340\" y=\"250\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"390\" y=\"250\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"440\" y=\"250\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"490\" y=\"250\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+
+        "<svg width=\"500\" height=\"500\"><text x=\"-10\" y=\"300\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"40\" y=\"300\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"90\" y=\"300\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"140\" y=\"300\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"190\" y=\"300\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"240\" y=\"300\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"290\" y=\"300\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"340\" y=\"300\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"390\" y=\"300\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"440\" y=\"300\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"490\" y=\"300\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+
+         "<svg width=\"500\" height=\"500\"><text x=\"-10\" y=\"350\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"40\" y=\"350\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"90\" y=\"350\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"140\" y=\"350\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"190\" y=\"350\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"240\" y=\"350\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"290\" y=\"350\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"340\" y=\"350\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"390\" y=\"350\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"440\" y=\"350\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"490\" y=\"350\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+
+         "<svg width=\"500\" height=\"500\"><text x=\"-10\" y=\"400\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"40\" y=\"400\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"90\" y=\"400\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"140\" y=\"400\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"190\" y=\"400\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"240\" y=\"400\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"290\" y=\"400\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"340\" y=\"400\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"390\" y=\"400\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"440\" y=\"400\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"490\" y=\"400\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+
+          "<svg width=\"500\" height=\"500\"><text x=\"-10\" y=\"450\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"40\" y=\"450\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"90\" y=\"450\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"140\" y=\"450\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"190\" y=\"450\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"240\" y=\"450\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"290\" y=\"450\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"340\" y=\"450\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"390\" y=\"450\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"440\" y=\"450\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"490\" y=\"450\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+
+        "<svg width=\"500\" height=\"500\"><text x=\"-10\" y=\"500\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"40\" y=\"500\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"90\" y=\"500\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"140\" y=\"500\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"190\" y=\"500\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"240\" y=\"500\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"290\" y=\"500\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"340\" y=\"500\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"390\" y=\"500\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"440\" y=\"500\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>",
+        "<svg width=\"500\" height=\"500\"><text x=\"490\" y=\"500\"textLength=\"70\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#color#\">X</text></svg>"],
+
+// color variables
+    "color":["Lavender","LavenderBlush","LemonChiffon","LightCyan","LightGreen","LightPink","LightSkyBlue","MediumPurple","MediumSeaGreen","MistyRose","PaleGoldenRod","PaleGreen","PaleTurqoise","Pink","Plum","PowderBlue","SeaGreen","SkyBlue","DarkSeaGreen"],
+
+// code for creating a knitted or crocheted project
+    /* "A Knitting Project <br> Cast on 10 stitches in #color# <br> Row 1: in #color#, #ten# <br> Row 2: in #color#, #ten# <br> Row 3: in #color#, #ten# <br> Row 4: in #color#, #ten# <br> Row 5: in #color#, #ten# <br> Repeat #number# times <br> Cast Off.", 
+     "A Crochet Project <br> Chain 10 stitches in #color# <br> Row 1: in #color#, #crochet10# <br> Row 2: in #color#, #crochet10# <br> Row 3: in #color#, #crochet10# <br> Row 4: in #color#, #crochet10# <br> Row 5: in #color#, #crochet10# <br> Repeat #number# times <br>Break yarn and pull through last loop on hook to end" ],
+
+    "cx":["100", "200", "300", "400"],
+    "cy": ["100","200","300","400" ],
+    "rx": ["10", "20","30","40",'50', "60","70","80",'90',"100"],
+    "ry":["10", "20","30","40",'50', "60","70","80",'90',"100"],
+    "r":["10", "20","30","40",'50', "60","70","80",'90',"100"],
+
+   
+    "ten":["#ten2#", "#ten3#"],
+    "ten2": ["k1, p9", "p1, k9", "k2, p8", "p2, k8", "k3, p7", "p3, k8", "k4, p6", "p4, k6", "k5, p5", "p5, k5", "k6, p4", "p6, k4", "k7, p3", "p7, k3", "k8, p2", "p8, k2", "k9, p1", "p9, k1", "k10", "p10"], 
+    "ten3":["k1, p8, k1", "k1, p7, k2", "k1, p6, k3", "k1, p5, k4", "k1, p4, k5", "k1, p3, k6", "k1, p2, k7", "k1, p1, k8"],
+    "color": ["red", "green", "blue", "orange", "yellow", "purple", "white", "black"],
+    "number": ["2", "3", "4", "5", "6", "7", "8", "9", "10"],
+    "crochet10": ["#stitch#1, #stitch#9", "#stitch#2, #stitch#8", "#stitch#3, #stitch#7", "dc4, sc6", "sc4, dc6", "dc5, sc5", "sc5, dc5", "dc6, sc4", "sc6, dc4", "dc7, sc3", "sc7, dc3", "dc8, sc2", "sc8, dc2", "dc9, sc1", "sc9, dc1", "dc10", "sc10"],
+    "stitch": ["dc", "sc", "hdc", "puff", "treble"]
+   */
+}
+;
+
+// This function detects variables and resolves them
+function generateString(template) {
+    let placeholder = template.match(/#([^#]+)#/);
+    while (placeholder) {
+        let [fullMatch, key] = placeholder;
+        let choices = obj[key];
+        if (!choices) {
+            throw new Error(`No choices for key '${key}'`);
+        }
+        let choice = choices[Math.floor(Math.random() * choices.length)];
+        template = template.replace(fullMatch, generateString(choice));
+        placeholder = template.match(/#([^#]+)#/);
+    }
+    return template;
+}
+
+var timer;  // to keep track of the timer
+
+// This function generates the text when it loads, clears any existing timer, then sets up a new timer to do it again after 30 seconds
+function displayString() {
+    var randomIndex = Math.floor(Math.random() * obj.origin.length);
+    document.getElementById('text-container').innerHTML = generateString(obj.origin[randomIndex]);
+    
+     // clear any existing timer
+    // clearTimeout(timer);
+     // set a new timer
+    // timer = setTimeout(displayString, 30000); // This makes the text regenerate every 30 seconds. Modify this number to make it regenerate more slowly or delete, if you don't want it to regenerate.
+}
+
+// Call once at the beginning
+displayString();
+  
+            // Get the modal - this is the About pop-up text.
+            var modal = document.getElementById("myModal");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            // Function to display the about modal
+            function displayAbout() {
+                modal.style.display = "block";
+            }
+/* This makes it so the text goes fullscreen if you click anywhere. I find texts look better when fullscreen. It doesn't work on phones or tablets.
+		     function goFullscreen() {
+         if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+
+         } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+            document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+            document.documentElement.msRequestFullscreen();
+        }
+    }
+
+    document.onclick = goFullscreen; */
+</script>
+</body>
+</html>
